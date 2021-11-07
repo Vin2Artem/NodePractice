@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Добавление вопроса</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <h1>Добавление вопроса</h1>
+    <div class="ofrm">
+        <form action="postFeedback" method="POST" enctype="multipart/form-data" onsubmit="return validate()">
+            <div class="ifrm">
+                <label>Имя</label>
+                <input name="name" required minlength="2" class="required"/><br><br>
+                <label>Почта</label>
+                <input name="email" required class="email required"/><br><br>
+                <label>Тема</label>
+                <input name="topic" required class="required"/><br><br>
+                <label>Вопрос</label><br><br>
+                <textarea name="message" required class="required"></textarea><br>
+                <label>Изображение</label><br>
+                <br>
+                <input type="file" name="filedata" /><br><br>
+                <input type="submit" class="submit" value="Отправить" />
+            </div>
+        </form>
+    </div>
+    <a href="/feedbacks">К списку вопросов</a>
+    <script>
+        let fields = document.querySelectorAll('.required');
+        let email = document.querySelectorAll('.email')[0];
+        const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        function validEmail(email) {
+            return re.test(email);
+        }        
+        function validate() {
+            let errors = "";
+            for (let i = 0; i < fields.length; i++) {
+              if (!fields[i].value) {
+                errors += "Поле " + fields[i].previousSibling.previousElementSibling.innerText + " должно быть заполнено\n";
+              }
+            }
+            if (!validEmail(email.value)) {
+                errors += "Невалидный email\n";
+            }
+            if (errors != "") {
+                alert (errors);
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>
