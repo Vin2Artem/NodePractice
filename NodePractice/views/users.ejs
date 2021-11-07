@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Список пользователей</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <a href="/users/create">Добавить пользователя</a>
+    <h1>Список пользователей</h1>
+    <table border="1">
+        <tr><th>Логин</th><th>Почта</th><th>Пароль</th><th>Аватар</th></tr>
+        <% for (var i = 0; i < users.length; i++) {
+            if (users[i].avatar == null) {%>
+                <tr><td><%= users[i].login %></td><td><%= users[i].email %></td><td><%= users[i].password %></td><td>Отсутствует</td></tr>
+            <% } else { %>
+                <tr><td><%= users[i].login %></td><td><%= users[i].email %></td><td><%= users[i].password %></td><td><img src="./avatars/<%= users[i].avatar %>" width="200" alt="Аватар"></td></tr>
+            <%}
+        } %>
+    </table>
+</body>
+</html>
