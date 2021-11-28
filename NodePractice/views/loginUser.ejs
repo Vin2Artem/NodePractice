@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Добавление пользователя</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <h1>Вход</h1>
+    <div class="ofrm">
+        <form action="enterUser" method="POST" onsubmit="return validate()">
+            <div class="ifrm">
+                <label>Логин</label>
+                <input name="login" required class="required" /><br><br>
+                <label>Пароль</label>
+                <input id="pass1" name="password" type="password" required class="required" /><br><br>
+                <label><%= firstNum %> + <%= secondNum %> =</label>
+                <input name="answer" required class="required" /><br><br>
+                <input type="submit" class="submit" value="Войти" />
+            </div>
+        </form>
+    </div>
+    <a href="/users">К списку пользователей</a>
+    <script>
+        function validate() {
+            let errors = "";
+            for (let i = 0; i < fields.length; i++) {
+              if (!fields[i].value) {
+                errors += "Поле " + fields[i].previousSibling.previousElementSibling.innerText + " должно быть заполнено\n";
+              }
+            }
+        }
+    </script>
+</body>
+</html>

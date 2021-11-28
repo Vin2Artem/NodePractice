@@ -14,6 +14,8 @@ userRouter.use("/postuser", multer({
     })
 }).single("filedata"), userController.postUser);
 userRouter.use("/create", userController.addUser);
+userRouter.use("/login", userController.loginUser);
+userRouter.use("/enteruser", userController.enterUser);
 userRouter.use("/", userController.getUsers);
 
 module.exports = userRouter;

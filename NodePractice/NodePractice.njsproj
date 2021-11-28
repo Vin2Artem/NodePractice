@@ -60,6 +60,7 @@
     <Content Include="README.md" />
     <Content Include="site.db" />
     <Content Include="views\createFeedback.ejs" />
+    <Content Include="views\loginUser.ejs" />
     <Content Include="views\createUser.ejs" />
     <Content Include="views\feedback.ejs" />
     <Content Include="public\styles.css">

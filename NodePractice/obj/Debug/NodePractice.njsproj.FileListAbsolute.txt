@@ -1,0 +1,3 @@
+C:\Users\Zver\source\repos\NodePractice\NodePractice\obj\Debug\NodePractice.njsproj.CoreCompileInputs.cache
+C:\Users\Zver\source\repos\NodePractice\NodePractice\bin\Microsoft.NodejsTools.WebRole.dll
+C:\Users\Zver\source\repos\NodePractice\NodePractice\obj\Debug\NodePractice.njsprojAssemblyReference.cache
